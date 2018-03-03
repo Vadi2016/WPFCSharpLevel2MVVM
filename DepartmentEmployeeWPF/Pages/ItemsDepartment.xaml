@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="DepartmentEmployeeWPF.ItemsDepartment"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DepartmentEmployeeWPF"
+             mc:Ignorable="d" 
+             d:DesignHeight="60" d:DesignWidth="300">
+    <Grid d:DataContext="{x:Static local:ItemDesignDepartmentModel.Instance}" Background="#3E3E3E">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Background="Red" Width="5"/>
+
+        <Border Grid.Column="1" Padding="8">
+            <Border Background="Aqua"
+                    Width="50"
+                  
+                    CornerRadius="60">
+                <TextBlock Text="Photo" 
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Foreground="Black"
+                           FontSize="15"/>
+            </Border>
+        </Border>
+
+        <StackPanel Grid.Column="2" VerticalAlignment="Center">
+            <TextBlock Text="{Binding NameDepartment}" FontSize="16" Foreground="AntiqueWhite" FontWeight="Black"/>
+            <TextBlock Text="{Binding Detail}" FontSize="12" Foreground="Gray" TextTrimming="CharacterEllipsis"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
